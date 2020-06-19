@@ -47,17 +47,11 @@ public class BUG_76427 extends UpgradeOp {
         standardZimlets.add("com_zimbra_backuprestore");
         standardZimlets.add("com_zimbra_bulkprovision");
         standardZimlets.add("com_zimbra_cert_manager");
-        standardZimlets.add("com_zimbra_click2call_cisco");
-        standardZimlets.add("com_zimbra_click2call_mitel");
         standardZimlets.add("com_zimbra_clientuploader");
         standardZimlets.add("com_zimbra_convertd");
         standardZimlets.add("com_zimbra_date");
         standardZimlets.add("com_zimbra_delegatedadmin");
         standardZimlets.add("com_zimbra_email");
-        standardZimlets.add("com_zimbra_hsm");
-        standardZimlets.add("com_zimbra_license");
-        standardZimlets.add("com_zimbra_mobilesync");
-        standardZimlets.add("com_zimbra_phone");
         standardZimlets.add("com_zimbra_proxy_config");
         standardZimlets.add("com_zimbra_smime");
         standardZimlets.add("com_zimbra_smime_cert_admin");
@@ -67,9 +61,7 @@ public class BUG_76427 extends UpgradeOp {
         standardZimlets.add("com_zimbra_url");
         standardZimlets.add("com_zimbra_viewmail");
         standardZimlets.add("com_zimbra_voiceprefs");
-        standardZimlets.add("com_zimbra_webex");
         standardZimlets.add("com_zimbra_xmbxsearch");
-        standardZimlets.add("com_zimbra_ymemoticons");
     }
 
     @Override

@@ -376,7 +376,7 @@ public class TestServiceServlet {
         String url = baseURL + "deployzimlet";
         HttpPost method = new HttpPost(url);
         addAuthTokenHeader(method, mbox.getAuthToken().getValue());
-        method.addHeader(ZimletUtil.PARAM_ZIMLET, "com_zimbra_phone");
+        method.addHeader(ZimletUtil.PARAM_ZIMLET, "com_zimbra_date");
         File zimletFile = new File("/opt/zimbra/zimlets/com_zimbra_adminversioncheck.zip"); //standard zimlet, should always be there. No harm in redeploying it
         if(zimletFile.exists()) {
             InputStream targetStream = new FileInputStream(zimletFile);

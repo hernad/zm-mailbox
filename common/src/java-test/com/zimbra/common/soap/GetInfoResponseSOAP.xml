@@ -184,11 +184,8 @@
         <attr name="zimbraZimletAvailableZimlets">+com_zimbra_url</attr>
         <attr name="zimbraZimletAvailableZimlets">+com_zimbra_email</attr>
         <attr name="zimbraZimletAvailableZimlets">+com_zimbra_date</attr>
-        <attr name="zimbraZimletAvailableZimlets">+com_zimbra_webex</attr>
         <attr name="zimbraZimletAvailableZimlets">+com_zimbra_dnd</attr>
-        <attr name="zimbraZimletAvailableZimlets">+com_zimbra_ymemoticons</attr>
         <attr name="zimbraZimletAvailableZimlets">+com_zimbra_srchhighlighter</attr>
-        <attr name="zimbraZimletAvailableZimlets">+com_zimbra_phone</attr>
         <attr name="zimbraZimletAvailableZimlets">+com_zimbra_attachcontacts</attr>
         <attr name="zimbraZimletAvailableZimlets">+com_zimbra_attachmail</attr>
         <attr name="zimbraMailTrustedSenderListMaxNumEntries">500</attr>
@@ -340,30 +337,7 @@
         <attr name="zimbraFeatureComposeInNewWindowEnabled">TRUE</attr>
       </attrs>
       <zimlets>
-        <zimlet>
-          <zimletContext baseUrl="/service/zimlet/com_zimbra_phone/" presence="enabled" priority="0"/>
-          <zimlet description="${msg.description}" name="com_zimbra_phone" target="main view-window" label="${msg.label}" version="2.7_6.0.0.20120622.103238">
-            <include>phone.js</include>
-            <include>templates/Phone.template.js</include>
-            <handlerObject>Com_Zimbra_Phone</handlerObject>
-            <serverExtension extensionClass="com.zimbra.cs.zimlet.handler.NANPHandler" hasKeyword="phone"/>
-            <contentObject type="phone">
-              <contextMenu>
-                <menuItem id="SEARCH" icon="Search" label="${msg.search}"/>
-                <menuItem id="ADDCONTACT" icon="NewContact" label="${msg.addToContacts}"/>
-                <menuItem id="CALL" icon="Telephone" label="${msg.call}"/>
-              </contextMenu>
-              <matchOn>
-                <regex attrs="g">\+?\(?\b\d(([((0-9){2,3})\(\)\.\s\-]){10,20}|\d{8})\d\b</regex>
-              </matchOn>
-            </contentObject>
-          </zimlet>
-          <zimletConfig name="com_zimbra_phone" version="2.7">
-            <global>
-              <property name="defaultContactField">companyPhone</property>
-            </global>
-          </zimletConfig>
-        </zimlet>
+      
         <zimlet>
           <zimletContext baseUrl="/service/zimlet/com_zimbra_url/" presence="enabled" priority="1"/>
           <zimlet description="${msg.description}" name="com_zimbra_url" target="main view-window" label="${msg.zimletLabel}" version="2.5_6.0.0.20120622.103238">
@@ -437,26 +411,6 @@
           </zimlet>
         </zimlet>
         <zimlet>
-          <zimletContext baseUrl="/service/zimlet/com_zimbra_ymemoticons/" presence="enabled" priority="4"/>
-          <zimlet description="${msg.description}" name="com_zimbra_ymemoticons" target="main compose-window view-window" label="${msg.label}" version="2.9_6.0.0.20120622.103238">
-            <include>ymemoticons.js</include>
-            <include>smileys.js</include>
-            <include>ymemoticonspicker.js</include>
-            <includeCSS>yemoticons.css</includeCSS>
-            <handlerObject>Com_Zimbra_YMEmoticons</handlerObject>
-            <zimletPanelItem icon="yemoticons-panelIcon" label="Emoticons">
-              <toolTipText>${msg.yahooEmoticons}</toolTipText>
-              <contextMenu>
-                <menuItem id="YE_TEMP_DISABLE" label="${msg.temporarilyDisableInMail}"/>
-                <menuItem id="YE_PREFERENCES" label="${msg.preferences}"/>
-              </contextMenu>
-            </zimletPanelItem>
-            <userProperties>
-              <property name="yemoticons_enableInMail" value="true" type="string"/>
-            </userProperties>
-          </zimlet>
-        </zimlet>
-        <zimlet>
           <zimletContext baseUrl="/service/zimlet/com_zimbra_dnd/" presence="enabled" priority="5"/>
           <zimlet description="${msg.description}" name="com_zimbra_dnd" target="main compose-window view-window" label="${msg.zimletLabel}" version="1.2_6.0.0.20120622.103238">
             <include>dnd.js</include>
@@ -509,37 +463,6 @@
               </matchOn>
             </contentObject>
           </zimlet>
-        </zimlet>
-        <zimlet>
-          <zimletContext baseUrl="/service/zimlet/com_zimbra_webex/" presence="enabled" priority="9"/>
-          <zimlet description="${msg.description}" name="com_zimbra_webex" label="${msg.label}" version="3.3_6.0.0.20120622.103238">
-            <include>webex.js</include>
-            <includeCSS>webex.css</includeCSS>
-            <handlerObject>com_zimbra_webex_HandlerObject</handlerObject>
-            <zimletPanelItem icon="WEBEX-panelIcon" label="${msg.WebExZimlet_label}">
-              <toolTipText>${msg.WebExZimlet_toolTip}</toolTipText>
-              <dragSource type="ZmContact"/>
-              <dragSource type="ZmConv"/>
-              <dragSource type="ZmMailMsg"/>
-              <dragSource type="ZmAppt"/>
-              <contextMenu>
-                <menuItem id="START_QUICK_MEETING" icon="WEBEX-panelIcon" label="${msg.WebExZimlet_quickMeeting}"/>
-                <menuItem id="START_JOIN_MEETING" icon="WEBEX-panelIcon" label="${msg.WebExZimlet_startJoinExistingMeeting}"/>
-                <menuItem/>
-                <menuItem id="ACCOUNT_PREFERENCES" icon="Group" label="${msg.WebExZimlet_manageAccounts}"/>
-                <menuItem id="GENERAL_PREFERENCES" icon="Preferences" label="${msg.WebExZimlet_preferences}"/>
-              </contextMenu>
-            </zimletPanelItem>
-            <userProperties>
-              <property name="webexZimlet_companyId" value="vmware" type="string"/>
-            </userProperties>
-          </zimlet>
-          <zimletConfig name="com_zimbra_webex" version="3.3">
-            <global>
-              <property name="allowedDomains">*.webex.com</property>
-              <property name="hasSensitiveData">true</property>
-            </global>
-          </zimletConfig>
         </zimlet>
       </zimlets>
       <props/>
